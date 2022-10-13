@@ -37,17 +37,19 @@ public class TestImportExport : MonoBehaviour
         
         if (!success)
             Debug.LogError("Something went wrong exporting a glTF");
+        else
+            Debug.LogError($"Export success - {filename}");
 
         return false;
     }
 
     async Task<bool> TestImport(string filename)
     {
+        var success = true;
         try
         {
             using var gltf = new GltfImport();
 
-            // Create a settings object and configure it accordingly
             var settings = new ImportSettings()
             {
                 generateMipMaps = false,
@@ -55,7 +57,7 @@ public class TestImportExport : MonoBehaviour
                 nodeNameMethod = ImportSettings.NameImportMethod.OriginalUnique
             };
 
-            var success = await gltf.Load(filename, settings);
+            success = await gltf.Load(filename, settings);
             if (success)
             {
                 var root = gltf.GetSourceRoot();
@@ -76,15 +78,18 @@ public class TestImportExport : MonoBehaviour
         catch (Exception e)
         {
             Debug.LogError($"gltf - {e.Message}");
+            success = false;
         }
 
-        return false;
+        return success;
     }
 
     async Task<bool> TestAll(string filename)
     {
         var success = await TestExport(filename);
         if (success)
-            return await TestImport(filename);
+            success = await TestImport(filename);
+
+        return success;
     }
 }
