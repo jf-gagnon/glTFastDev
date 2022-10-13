@@ -38,9 +38,9 @@ public class TestImportExport : MonoBehaviour
         if (!success)
             Debug.LogError("Something went wrong exporting a glTF");
         else
-            Debug.LogError($"Export success - {filename}");
+            Debug.Log($"Export success - {filename}");
 
-        return false;
+        return success;
     }
 
     async Task<bool> TestImport(string filename)

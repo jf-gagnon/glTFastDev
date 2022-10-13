@@ -18,7 +18,8 @@ namespace UNITY_simple_extension
         [Serializable]
         class NodeExtensionData
         {
-            public int data;
+            [System.ComponentModel.DefaultValue(-1)]
+            public int data = -1;
         }
 
         class ExportData

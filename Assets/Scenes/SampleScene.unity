@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 1532708734}
   - component: {fileID: 1532708735}
   m_Layer: 0
-  m_Name: UNITY_simple_extension
+  m_Name: UNITY_simple_extension_node
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
