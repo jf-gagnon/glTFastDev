@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - RS_Dome
+  - RS_Ground
+  - RS_Outlined
+  - RS_OutlinePassVolume
+  - RS_Gizmos
+  - RS_Icons
+  - RS_Icons3D
+  - RS_GizmosPassVolume
+  - RS_InfiniteGrid
+  - RS_InfiniteGridPassVolume
+  - RS_ObjectID
+  - RS_ObjectIdPassVolume
+  - RS_WatermarkPass
+  - RS_ShadowPlaneCapture
+  - RS_IsolatedOutput
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
