@@ -9,8 +9,7 @@ public class TestImportExport : MonoBehaviour
 {
     void Start()
     {
-        //TestImport("C:/Users/jeanfrancois.gagnon/Documents/Glft - Glb/SimpleLightsRig.gltf");
-        TestExport("C:/Users/jeanfrancois.gagnon/Documents/Glft - Glb/TestExport.gltf");
+        TestAll("C:/Users/jeanfrancois.gagnon/Documents/Glft - Glb/TestExport.gltf");
     }
 
     async Task<bool> TestExport(string filename)
@@ -80,5 +79,12 @@ public class TestImportExport : MonoBehaviour
         }
 
         return false;
+    }
+
+    async Task<bool> TestAll(string filename)
+    {
+        var success = await TestExport(filename);
+        if (success)
+            return await TestImport(filename);
     }
 }
