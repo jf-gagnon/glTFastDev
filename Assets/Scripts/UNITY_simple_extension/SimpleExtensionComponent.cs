@@ -1,4 +1,5 @@
 using UnityEngine;
+using UNITY_simple_extension.Schema;
 
 namespace UNITY_simple_extension
 {

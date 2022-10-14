@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UNITY_simple_extension.Schema;
 
 namespace UNITY_simple_extension
 {
@@ -13,8 +14,8 @@ namespace UNITY_simple_extension
         {
             internal List<(RootExtensionData rootData, int nodeId, NodeExtensionData nodeData)> list;
         }
-
-        static void OnGameobjectAdded(IGltfWritable gltf, GameObject gameObject, int nodeId)
+        
+        static void OnGameobjectAdded(IGltfWritable gltf, GameObject gameObject, int nodeId, IMaterialExport materialExport)
         {
             if (gltf == null
                 || gameObject == null
@@ -59,20 +60,10 @@ namespace UNITY_simple_extension
             if (!exportData.list.Any())
                 return;
 
-            var rootExtension = gltf.GetRootExtension();
-            rootExtension.genericProperties ??= new Dictionary<string, object>();
-            
             exportData.list.ForEach(data =>
             {
-                var node = gltf.GetNode(data.nodeId);
-                if (node != null)
-                {
-                    node.extensions ??= new NodeExtensions();
-                    node.extensions.genericProperties ??= new Dictionary<string, object>(); 
-                    node.extensions.genericProperties.Add(name, data.nodeData);
-                }
-
-                rootExtension.genericProperties.Add(name, data.rootData);
+                gltf.SetRootNodeExtension(name, data.nodeData);
+                gltf.SetNodeExtension(data.nodeId, name, data.nodeData);
             });
 
             gltf.RegisterExtensionUsage(name, true);

@@ -3,6 +3,7 @@ using GLTFast.Export;
 using GLTFast.Schema;
 using System;
 using UnityEngine;
+using UNITY_simple_extension.Schema;
 
 namespace UNITY_simple_extension
 {

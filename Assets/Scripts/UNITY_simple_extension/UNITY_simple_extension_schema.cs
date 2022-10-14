@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace UNITY_simple_extension
+namespace UNITY_simple_extension.Schema
 {
     [Serializable]
     public class KeyValuePair
