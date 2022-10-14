@@ -843,17 +843,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f7ddbeb45225d4a838a16e171ad67d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  variantSet:
-    name: Metallyticus
+  m_VariantSet:
+  - name: Metallyticus
     variants:
     - renderer: {fileID: 1366087271}
       sourceMaterialIndex: 0
       targetMaterial: {fileID: 2100000, guid: 93776602b6b28384085450b48bb3df18, type: 2}
     - renderer: {fileID: 556527487}
-      sourceMaterialIndex: 0
-      targetMaterial: {fileID: 2100000, guid: 01031bc8e1a510e428c6f8f448470537, type: 2}
-    - renderer: {fileID: 556527487}
       sourceMaterialIndex: 1
+      targetMaterial: {fileID: 2100000, guid: 01031bc8e1a510e428c6f8f448470537, type: 2}
+  - name: Splendidus
+    variants:
+    - renderer: {fileID: 556527487}
+      sourceMaterialIndex: 2
       targetMaterial: {fileID: 2100000, guid: 93776602b6b28384085450b48bb3df18, type: 2}
 --- !u!1 &1366087268
 GameObject:

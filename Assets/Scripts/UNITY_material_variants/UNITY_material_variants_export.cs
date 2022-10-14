@@ -146,6 +146,8 @@ namespace UNITY_material_variants
                 {
                     gltf.SetNodeExtension(data.nodeId, name, data.materialVariants);
                 });
+            
+            gltf.RegisterExtensionUsage(name, true);
         }
     }
 }
