@@ -6,13 +6,12 @@ using UnityEngine;
 
 namespace UNITY_simple_extension
 {
-    [Serializable]
-    public class KeyValuePair
-    {
-        public string key;
-        public int value;
-    }
-
+    /// <summary>
+    /// Sample to show how to add custom extension in glTFast
+    /// This extension has no API call. It only exposes a new component
+    /// which gets included in gltf.
+    /// TODO: handle import
+    /// </summary>
     public static partial class UNITY_simple_extension_class
     {
         public static string name = "UNITY_simple_extension";

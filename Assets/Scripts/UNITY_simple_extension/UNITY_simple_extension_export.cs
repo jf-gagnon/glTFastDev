@@ -9,19 +9,6 @@ namespace UNITY_simple_extension
 {
     public static partial class UNITY_simple_extension_class
     {
-        [Serializable]
-        class RootExtensionData
-        {
-            public KeyValuePair[] datas;
-        }
-
-        [Serializable]
-        class NodeExtensionData
-        {
-            [System.ComponentModel.DefaultValue(-1)]
-            public int data = -1;
-        }
-
         class ExportData
         {
             internal List<(RootExtensionData rootData, int nodeId, NodeExtensionData nodeData)> list;
